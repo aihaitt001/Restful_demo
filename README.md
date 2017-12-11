@@ -1,0 +1,1 @@
+该demo是为了试验怎么构成Restful架构而写的。主要是尝试了用AJAX来对服务器发出DELETE和PUT请求,并发送JSON字符串。而完整项目在[SSM_Demo](https://github.com/aihaitt001/SSM_Demo)这个里面。
