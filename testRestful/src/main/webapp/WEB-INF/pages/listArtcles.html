@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>listArtcles</title>
+
+	<script type="text/javascript" src="/springmvc/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/springmvc/js/json2.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		//var user ;
+		//if(user==''||user==null){
+		//	$("#user").text("游客");
+		//}else{
+		//	$("#user").text(user);
+		//}
+		 /** 删除员工绑定点击事件 */
+	 	  
+		
+	});
+	function deleteArtcle(artcleid) {
+        $.ajax({
+            
+            type: "DELETE",
+            url: "/testRestful/artcles" ,
+            data: {
+            	artcleId:artcleid
+            },   
+           
+            success: function () {
+            	alert("delete done");
+            },
+            error: function (e) {
+                alert("artcles doesn't found");
+            }
+        });
+    }
+	</script>
+
+</head>
+<body>
+  <p>hello world<p/>
+  <p id="user">用户名 </p><br/>
+  
+  <div id="artclelist">
+       <form action="/testRestful/artcles" type="POST">
+          <input type="text" id="method" name="_method" value="DELETE"></input>
+          
+       
+       
+       </form>
+            <div><button th:onclick="'javascript:deleteArtcle(1)'" >删除</button></div>
+           
+            
+         
+      </div>
+</body>
+</html>
